@@ -1,0 +1,49 @@
+name: Telegram bot 24/7
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"     # каждые 10 минут ставим в очередь следующий запуск
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["bot.py", ".github/workflows/bot.yml"]
+
+# один бот одновременно: новый запуск ждёт, пока текущий завершится
+concurrency:
+  group: telegram-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Настроить git для сохранения заявок
+        run: |
+          git config user.name  "ximera-bot"
+          git config user.email "bot@users.noreply.github.com"
+
+      - name: Запустить бота
+        env:
+          BOT_TOKEN:    ${{ secrets.BOT_TOKEN }}
+          ADMIN_ID:     ${{ secrets.ADMIN_ID }}
+          CLAIM_CODE:   ${{ secrets.CLAIM_CODE }}
+          RUN_SECONDS:  "19200"      # 5 ч 20 мин, потом воркфлоу перезапустится
+          GIT_PERSIST:  "1"
+        run: python bot.py
+
+      - name: Сохранить заявки перед выходом
+        if: always()
+        run: |
+          git add data/db.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "data: заявки [skip ci]"
+          git push || true
