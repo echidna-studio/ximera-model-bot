@@ -244,6 +244,15 @@ def on_message(m):
     # ── команды
     if text.startswith("/start"):
         DB["state"].pop(str(uid), None); db_save()
+        if is_admin(uid):
+            send(chat_id,
+                 "👑 <b>Вы админ</b>\n\n"
+                 "Вы администратор бота <b>Ximera Model Agency</b>.\n"
+                 "Все заявки от моделей приходят сюда — с фото и кнопками "
+                 "«Одобрить / Отклонить / Написать».\n\n"
+                 "Панель управления: /admin",
+                 ikb([[btn("🛠 Открыть панель", "panel")]]))
+            return
         send(chat_id, WELCOME, ikb([[btn("📝 Оставить заявку", "apply")]]))
         return
     if text.startswith("/id"):
