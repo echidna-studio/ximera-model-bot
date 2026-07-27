@@ -53,11 +53,11 @@
    ],
    "status": "rejected",
    "ts": 1785142568
-  }
- ],
- "state": {
-  "8690070286": {
-   "step": 6,
+  },
+  {
+   "id": 4,
+   "user_id": 8690070286,
+   "username": "echidnyy",
    "data": {
     "name": "Сача Каргин",
     "age": "19",
@@ -66,9 +66,14 @@
     "exp": "на пх",
     "contact": "@Sanek4079"
    },
-   "photos": []
+   "photos": [
+    "AgACAgIAAxkBAAODamdNON34SoD4Xf8-WGZkd07tH5AAAm0aaxtedTlLpgSl2XPZ2GoBAAMCAAN4AAM9BA"
+   ],
+   "status": "pending",
+   "ts": 1785154875
   }
- },
- "next_id": 4,
+ ],
+ "state": {},
+ "next_id": 5,
  "admin": 8978083933
 }
