@@ -1,8 +1,9 @@
 {
- "apps": [],
- "state": {
-  "8690070286": {
-   "step": 6,
+ "apps": [
+  {
+   "id": 1,
+   "user_id": 8690070286,
+   "username": "echidnyy",
    "data": {
     "name": "Маша Саша",
     "age": "19",
@@ -13,9 +14,12 @@
    },
    "photos": [
     "AgACAgIAAxkBAAMcamcUGcE78yJI6mTiD5JIh5WGrGUAAj4ZaxtedTlL6eouIoP-TScBAAMCAAN5AAM9BA"
-   ]
+   ],
+   "status": "approved",
+   "ts": 1785140252
   }
- },
- "next_id": 1,
+ ],
+ "state": {},
+ "next_id": 2,
  "admin": 8978083933
 }
