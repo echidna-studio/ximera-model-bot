@@ -1,6 +1,21 @@
 {
  "apps": [],
- "state": {},
+ "state": {
+  "8690070286": {
+   "step": 6,
+   "data": {
+    "name": "Маша Саша",
+    "age": "19",
+    "city": "Бермуды",
+    "params": "175/52/28-638-82/",
+    "exp": "нет опыта",
+    "contact": "@pidor"
+   },
+   "photos": [
+    "AgACAgIAAxkBAAMcamcUGcE78yJI6mTiD5JIh5WGrGUAAj4ZaxtedTlL6eouIoP-TScBAAMCAAN5AAM9BA"
+   ]
+  }
+ },
  "next_id": 1,
  "admin": 8978083933
 }
