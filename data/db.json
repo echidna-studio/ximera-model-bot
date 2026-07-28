@@ -71,15 +71,27 @@
    ],
    "status": "pending",
    "ts": 1785154875
+  },
+  {
+   "id": 5,
+   "user_id": 8690070286,
+   "username": "echidnyy",
+   "data": {
+    "name": "ц",
+    "age": "18",
+    "city": "ащ",
+    "params": "вш",
+    "exp": "аш",
+    "contact": "шв"
+   },
+   "photos": [
+    "AgACAgIAAxkBAAOzamiDsBV7TBgxU9cISWZvZiihlR8AAkcZaxuGeUBL6zkvO58f2IwBAAMCAAN5AAM9BA"
+   ],
+   "status": "approved",
+   "ts": 1785234354
   }
  ],
- "state": {
-  "8690070286": {
-   "step": 0,
-   "data": {},
-   "photos": []
-  }
- },
- "next_id": 5,
+ "state": {},
+ "next_id": 6,
  "admin": 8978083933
 }
